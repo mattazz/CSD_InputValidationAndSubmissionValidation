@@ -61,6 +61,8 @@
     </div>
     <br>
     <div align="margin-left">
+
+      <!-- Changed to same names so that it's only one option only -->
       <h2>Select a time</h2>
       <input type="radio" id="first" name="seatingTime" value="5" checked>
       <label for="first">5:00</label><br>
@@ -111,6 +113,7 @@
         }
 
         let selectedFoods = [];
+        //check if checked for all options
         if (starters) selectedFoods.push('Starters');
         if (main) selectedFoods.push('Main Course');
         if (dessert) selectedFoods.push('Dessert');
@@ -184,7 +187,7 @@
           phoneMessage.innerHTML = "Phone number must have exactly 6 character"
         } else if (isNaN(userPhone[0])) {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
-          // can use inNaN
+          // can use inNaN to check if number, then [0] index to check the first character
           phoneMessage.classList.remove('success')
           phoneMessage.classList.add('error')
           phoneField.classList.add('errorBG')
